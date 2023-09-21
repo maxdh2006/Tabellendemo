@@ -4,6 +4,8 @@ import java.util.*;
 class Tabelle {
 
     static int[][] tabelle1 = new int[4][5];
+    int randomNum=0;
+    int zeilenSumme;
 
     public static void main(String[] args) {
         Tabelle tabelleObjekt = new Tabelle();
@@ -12,9 +14,6 @@ class Tabelle {
         tabelleObjekt.min();
     
     }
-
-    int randomNum=0;
-    int zeilenSumme;
 
     void fuelle() {
         for (int i = 0; i < Tabelle.tabelle1.length; i++) {
@@ -30,21 +29,21 @@ class Tabelle {
                 
             }
             System.out.println();
-            
         }
     }
 
     void sumZeile(){
        String text;
        Scanner s = new Scanner(System.in);
+
         do{
         System.out.println("Gib eine Zeilennummer von 1-4 an, welche du summiert haben möchtest: ");
-        
         int eingabe = s.nextInt();
         int zeile1 = Tabelle.tabelle1[0][0] + Tabelle.tabelle1[0][1] + Tabelle.tabelle1[0][2] + Tabelle.tabelle1[0][3] + Tabelle.tabelle1[0][4];
         int zeile2 = Tabelle.tabelle1[1][0] + Tabelle.tabelle1[1][1] + Tabelle.tabelle1[1][2] + Tabelle.tabelle1[1][3] + Tabelle.tabelle1[1][4];
         int zeile3 = Tabelle.tabelle1[2][0] + Tabelle.tabelle1[2][1] + Tabelle.tabelle1[2][2] + Tabelle.tabelle1[2][3] + Tabelle.tabelle1[2][4];
         int zeile4 = Tabelle.tabelle1[3][0] + Tabelle.tabelle1[3][1] + Tabelle.tabelle1[3][2] + Tabelle.tabelle1[3][3] + Tabelle.tabelle1[3][4];
+
         if(eingabe==1){
             System.out.println(zeile1);
         } else if(eingabe==2){
@@ -54,12 +53,12 @@ class Tabelle {
         }else if(eingabe==4){
             System.out.println(zeile4);
         }
+
         System.out.println("Möchtest du noch eine Summe einer Zeile haben?");
         s.nextLine();
         text = s.nextLine();
+        } while(text.equalsIgnoreCase("Ja"));
         
-        
-        }while(text.equalsIgnoreCase("Ja"));
         s.close();
     }
 
