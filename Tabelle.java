@@ -18,19 +18,13 @@ class Tabelle {
     void fuelle() {
         for (int i = 0; i < Tabelle.tabelle1.length; i++) {
             for (int j = 0; j < Tabelle.tabelle1[i].length; j++) {
-                randomNum = ThreadLocalRandom.current().nextInt(1, 101); // Generates random number between 1 and 100
+                randomNum = ThreadLocalRandom.current().nextInt(1, 101);
                 Tabelle.tabelle1[i][j] = randomNum;
-
-            }
-        }
-        for (int i = 0; i < Tabelle.tabelle1.length; i++) {
-            for (int j = 0; j < Tabelle.tabelle1[i].length; j++) {
                 System.out.print(Tabelle.tabelle1[i][j] + "\t");
-                
+
             }
             System.out.println();
         }
-    }
 
     void sumZeile(){
        String text;
